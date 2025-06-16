@@ -1,0 +1,49 @@
+package com.example.demo.model;
+
+import jakarta.persistence.*;
+
+@Entity
+public class Publisher {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long publisherId;
+
+    private String name;
+    private String address;
+
+    // No-args constructor
+    public Publisher() {
+    }
+
+    // All-args constructor
+    public Publisher(String name, String address) {
+        this.name = name;
+        this.address = address;
+    }
+
+    // Getters and Setters
+    public Long getPublisherId() {
+        return publisherId;
+    }
+
+    public void setPublisherId(Long publisherId) {
+        this.publisherId = publisherId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+}

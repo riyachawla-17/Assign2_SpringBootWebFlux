@@ -1,0 +1,20 @@
+package com.example.demo.model;
+
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.annotation.Id;
+
+@EntityScan
+public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long bookId;
+
+    private String title;
+    private String author;
+    private double price;
+
+    @ManyToOne
+    private Publisher publisher;
+
+    // Constructors, Getters, Setters
+}
